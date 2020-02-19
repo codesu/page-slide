@@ -1,0 +1,54 @@
+.ballon-page {
+    overflow: hidden;
+    position: absolute;
+    display: none;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.ballon-page__container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.ballon-page.enter .ballon-page__container {
+    animation: .5s ease-in-out container;
+    animation-fill-mode: forwards;
+}
+
+@keyframes container {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.ballon-page__cloud {
+    opacity: 0;
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: 1s ease-in-out 1s cloud;
+    animation-fill-mode: forwards;
+}
+
+.ballon-page.exit .ballon-page__ballon {
+    opacity: 1;
+    top: 0.9rem;
+    right: 0.5rem;
+    animation: 1s linear ballonLeave 1s forwards;
+}
+
+
